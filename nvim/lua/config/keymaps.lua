@@ -66,3 +66,5 @@ vim.keymap.set("n", "<leader>p", "<cmd>:let @+=expand('%:p')<CR>")
 
 vim.keymap.set("n", "<leader><space>", "<cmd>FzfLua files<CR>", { desc = "Find files" })
 vim.keymap.set("n", "<space><space>", "<cmd>FzfLua files<CR>", { desc = "Find files" })
+
+vim.keymap.set("n", "<leader>`", "<cmd>FzfLua buffers<CR>", { desc = "Find buffers" })
