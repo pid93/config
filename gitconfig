@@ -30,3 +30,5 @@
     path =~/.gitconfig-work
 [includeIf "gitdir:~/repos/priv/"]
     path =~/.gitconfig-priv
+[includeIf "gitdir:~/repos/"]
+    path =~/.gitconfig-default
