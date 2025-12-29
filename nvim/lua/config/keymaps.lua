@@ -68,3 +68,4 @@ vim.keymap.set("n", "<leader><space>", "<cmd>FzfLua files<CR>", { desc = "Find f
 vim.keymap.set("n", "<space><space>", "<cmd>FzfLua files<CR>", { desc = "Find files" })
 
 vim.keymap.set("n", "<leader>`", "<cmd>FzfLua buffers<CR>", { desc = "Find buffers" })
+vim.keymap.set("i", ";;", "<esc>")
