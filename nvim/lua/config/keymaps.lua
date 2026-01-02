@@ -68,4 +68,11 @@ vim.keymap.set("n", "<leader><space>", "<cmd>FzfLua files<CR>", { desc = "Find f
 vim.keymap.set("n", "<space><space>", "<cmd>FzfLua files<CR>", { desc = "Find files" })
 
 vim.keymap.set("n", "<leader>`", "<cmd>FzfLua buffers<CR>", { desc = "Find buffers" })
-vim.keymap.set("i", ";;", "<esc>")
+
+--esc in insert & visual mode
+vim.keymap.set("i", "kj", "<esc>", { noremap = true })
+vim.keymap.set("v", "kj", "<esc>", { noremap = true })
+--Note: In command mode mappings to esc run the command for some odd
+--historical vi compatibility reason. We use the alternate method of
+--exiting which is Ctrl-C
+vim.keymap.set("c", "kj", "<esc>", { noremap = true })
