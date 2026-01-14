@@ -15,13 +15,11 @@ return {
 	config = function()
 		local lspconfig = require("lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
-		-- 1. Create capabilities to broadcast to the LSP
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		require("mason").setup()
 		require("mason-lspconfig").setup({
-			ensure_installed = { "vtsls" }, -- Mason name
+			ensure_installed = { "vtsls", "eslint" }, -- Mason name
 			handlers = {
 				-- The first entry is the default handler for all installed servers
 				function(server_name)
@@ -29,8 +27,23 @@ return {
 						capabilities = capabilities,
 					})
 				end,
+				-- 2. ESLint specific handler
+				["eslint"] = function()
+					lspconfig.eslint.setup({
+						capabilities = capabilities,
+						on_attach = function(client, bufnr)
+							-- Creates an auto-command to fix all fixable errors on save
+							vim.api.nvim_create_autocmd("BufWritePre", {
+								buffer = bufnr,
+								command = "EslintFixAll",
+							})
+						end,
+						settings = {
+							workingDirectories = { mode = "auto" },
+						},
+					})
+				end,
 
-				-- Target vtsls specifically for custom settings
 				["vtsls"] = function()
 					lspconfig.vtsls.setup({
 						capabilities = capabilities,
