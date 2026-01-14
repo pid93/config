@@ -70,3 +70,7 @@ vim.keymap.set("v", "kj", "<esc>", { noremap = true })
 --historical vi compatibility reason. We use the alternate method of
 --exiting which is Ctrl-C
 vim.keymap.set("c", "kj", "<esc>", { noremap = true })
+
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename)
+vim.keymap.set("n", "<leader>cR", vim.lsp.buf.rename)
