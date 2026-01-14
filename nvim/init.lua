@@ -1,4 +1,5 @@
 require("config.init")
 require("config.lazy")
 require("config.keymaps")
+require("config.autocmd")
 vim.cmd("colorscheme catppuccin-mocha")
