@@ -22,8 +22,11 @@ return {
 					end,
 				},
 				window = {
-					--completion = cmp.config.window.bordered(),
+					-- completion = cmp.config.window.bordered(),
 					-- documentation = cmp.config.window.bordered(),
+				},
+				completion = {
+					completeopt = "menu,menuone,noinsert",
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -41,6 +44,7 @@ return {
 					-- { name = 'snippy' }, -- For snippy users.
 				}, {
 					{ name = "buffer" },
+					{ name = "path" },
 				}),
 			})
 		end,

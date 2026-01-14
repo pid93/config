@@ -1,6 +1,5 @@
 return {
 	"stevearc/oil.nvim",
-	columns = {},
 	-- Optional dependencies
 	dependencies = { { "nvim-mini/mini.icons", opts = {} } },
 	-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
@@ -10,6 +9,11 @@ return {
 		{ "<C-e>", "<cmd>Oil<CR>" },
 	},
 	config = function()
-		require("oil").setup()
+		require("oil").setup({
+			skip_confirm_for_simple_edits = true,
+			columns = {},
+			watch_for_changes = true,
+			show_hidden = true,
+		})
 	end,
 }
