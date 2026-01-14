@@ -19,7 +19,7 @@ return {
 
 		require("mason").setup()
 		require("mason-lspconfig").setup({
-			ensure_installed = { "vtsls", "eslint" }, -- Mason name
+			ensure_installed = { "vtsls", "eslint", "rust_analyzer" },
 			handlers = {
 				-- The first entry is the default handler for all installed servers
 				function(server_name)
