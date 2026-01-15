@@ -7,6 +7,7 @@ return {
 		{ "<leader>sg", "<cmd> FzfLua live_grep<cr>", desc = "grep" },
 		{ "<leader>`", "<cmd> FzfLua buffers<cr>", desc = "find buffers" },
 		{ "gr", "<cmd> FzfLua lsp_references<cr>", desc = "references" },
+		{ "<leader>ca", "<cmd> FzfLua lsp_code_actions<cr>", desc = "code actions" },
 	},
 	opts = {},
 }
