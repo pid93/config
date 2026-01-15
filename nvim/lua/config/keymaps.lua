@@ -73,3 +73,6 @@ vim.keymap.set("c", "kj", "<esc>", { noremap = true })
 
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename)
+vim.keymap.set("n", "<leader>cu", function()
+	vim.lsp.buf.code_action({ context = { only = { "source.removeUnused.ts" } }, apply = true })
+end)
