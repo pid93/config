@@ -8,6 +8,7 @@ return {
 		{ "<leader>`", "<cmd> FzfLua buffers<cr>", desc = "find buffers" },
 		{ "gr", "<cmd> FzfLua lsp_references<cr>", desc = "references" },
 		{ "<leader>ca", "<cmd> FzfLua lsp_code_actions<cr>", desc = "code actions" },
+		{ "<leader>gd", "<cmd> FzfLua lsp_definitions<cr>", desc = "code actions" },
 	},
 	opts = {},
 }
